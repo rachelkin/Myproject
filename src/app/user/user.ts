@@ -8,6 +8,7 @@ import { USERS } from '../fake_users';
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
+
 export class User {
 
 

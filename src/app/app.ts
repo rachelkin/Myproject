@@ -6,10 +6,12 @@ import { USERS } from './fake_users';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,User],
+  imports: [RouterOutlet , Header,User],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
+
+
 export class App {
   protected readonly title = signal('firstApp');
   users = USERS;
@@ -24,3 +26,9 @@ export class App {
 
   }
 }
+
+
+
+
+
+
