@@ -33,6 +33,4 @@ export class User {
     const randomlndex = Math.floor(Math.random() * USERS.length);
     this.selectedUser = USERS[randomlndex];
   }
-
-
 }
