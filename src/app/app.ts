@@ -4,19 +4,23 @@ import { Header } from './header/header';
 import { User } from './user/user';
 import { USERS } from './fake_users';
 
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,Header,User],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
-  users = USERS
-  protected readonly title = signal('first');
-  onuserselected(id:string){
-    const userclicked=USERS.find((user)=>user.id===user.id)
-    console.log("the user clicked:",userclicked);
-    
+  protected readonly title = signal('firstApp');
+  users = USERS;
+  selectedUser= this.users[0];
+
+
+  onUserSelected(userId:string){
+    const userClicked = this.users.find((user)=>user.id === userId)
+    console.log('user Clicked from father', userClicked);
+    if(userClicked)
+    this.selectedUser = userClicked;
+
   }
 }

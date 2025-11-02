@@ -1,31 +1,37 @@
-import { Component, Input,Output, EventEmitter } from '@angular/core';
-import { USERS} from '../fake_users';
-
+import { Component, input, Input, Output, EventEmitter } from '@angular/core';
+import { USERS } from '../fake_users';
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  standalone: true,
+  imports: [User],
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
-
-
 export class User {
-  @Input() name!: string;
+
+
+  selectedUser = USERS[0];
+  @Input({ required: true }) name!: string;
   @Input() avatar!: string;
   @Input({ required: true }) id!: string;
-  @Output() userclicked = new EventEmitter<string>();  // Use string for id type
-  selectedUser: any;
-  onuserclicked() {
-    this.userclicked.emit(this.id);
+  
+  @Output() userClicked = new EventEmitter<string>();
+
+
+  onUserClicked() {
+    this.userClicked.emit(this.id);
   }
 
+
   get userImgPath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.selectedUser.avatar;
   }
 
   changeUser() {
-    const randomIndex = Math.floor(Math.random() * USERS.length);
-    this.selectedUser = USERS[randomIndex];
+    const randomlndex = Math.floor(Math.random() * USERS.length);
+    this.selectedUser = USERS[randomlndex];
   }
+
+
 }
