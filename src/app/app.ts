@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { User } from './user/user';
 import { USERS } from './fake_users';
+import { Tasks } from './tasks/tasks';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet , Header,User],
+  imports: [RouterOutlet , Header,User,Tasks],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -15,7 +16,8 @@ import { USERS } from './fake_users';
 export class App {
   protected readonly title = signal('firstApp');
   users = USERS;
-  selectedUser= this.users[0];
+  
+  selectedUser?:any ;
 
 
   onUserSelected(userId:string){
