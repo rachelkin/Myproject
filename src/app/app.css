@@ -1,40 +1,62 @@
+/* עיצוב כללי של הדף הראשי */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #fff);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+/* כותרת עליונה */
+header {
+  width: 100%;
+  background: linear-gradient(90deg, #4a90e2, #6ec6ff);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+}
+
+/* אזור התוכן */
 main {
-  width: 90%;
-  max-width: 50rem;
-  margin: 2.5rem auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
   display: grid;
-  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
-#users {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 0.5rem;
-  overflow: auto;
+/* אפקטים כלליים */
+button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-#fallback {
-  font-weight: bold;
-  font-size: 1.15rem;
-  margin: 0;
-  text-align: center;
+button:hover {
+  background-color: #357abd;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
 }
 
-@media (min-width: 768px) {
-  main {
-    margin: 4rem auto;
-    grid-template-columns: 1fr 3fr;
-  }
+/* אפקטים קלים על המעברים בין משתמשים */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
 
-  #users {
-    flex-direction: column;
-  }
-
-  #fallback {
-    font-size: 1.5rem;
-    text-align: left;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -2,32 +2,32 @@
 export const USERS = [
   {
     id: 'u1',
-    name: 'Yael Levi',
+    name: 'נעמה קליין',
     avatar: 'user-1.jpg',
   },
   {
     id: 'u2',
-    name: 'Chana Cohen',
+    name: 'אפרת בלדב ',
     avatar: 'user-2.jpg',
   },
   {
     id: 'u3',
-    name: 'Moshe Katz',
+    name: ' רות אזולאי',
     avatar: 'user-3.jpg',
   },
   {
     id: 'u4',
-    name: 'David Miller',
+    name: 'רחל קינסבורסקי  ',
     avatar: 'user-4.jpg',
   },
   {
     id: 'u5',
-    name: 'Rachel Adams',
+    name: 'שבי סגל  ',
     avatar: 'user-5.jpg',
   },
   {
     id: 'u6',
-    name: 'Yossi Ben-David',
+    name: 'רעות כהן ',
     avatar: 'user-6.jpg',
   },
 ];
