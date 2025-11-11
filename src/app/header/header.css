@@ -1,71 +1,40 @@
-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border-bottom: 2px solid rgba(74, 144, 226, 0.15);
-  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  animation: fadeSlideIn 1s ease forwards;
-}
-
-/* אפקט כניסה */
-@keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* לוגו */
-header img {
-  width: 90px;
-  height: 90px;
-  margin-bottom: 1rem;
-  transition: transform 0.4s ease;
-}
-
-header img:hover {
-  transform: rotate(10deg) scale(1.1);
-}
-
-/* כותרת האתר */
-header h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #2a4d7f;
-  letter-spacing: 1px;
-  margin: 0.3rem 0;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-/* תיאור מתחת לכותרת */
-header p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 500px;
-  text-align: center;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* רספונסיביות למסכים קטנים */
-@media (max-width: 600px) {
-  header img {
-    width: 70px;
-    height: 70px;
+main {
+    width: 90%;
+    max-width: 50rem;
+    margin: 2.5rem auto;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 2rem;
   }
   
-  header h1 {
-    font-size: 1.7rem;
+  #users {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+    overflow: auto;
   }
   
-  header p {
-    font-size: 1rem;
-    padding: 0 1rem;
+  #fallback {
+    font-weight: bold;
+    font-size: 1.15rem;
+    margin: 0;
+    text-align: center;
   }
-}
+  
+  @media (min-width: 768px) {
+    main {
+      margin: 4rem auto;
+      grid-template-columns: 1fr 3fr;
+    }
+  
+    #users {
+      flex-direction: column;
+    }
+  
+    #fallback {
+      font-size: 1.5rem;
+      text-align: left;
+    }
+  }

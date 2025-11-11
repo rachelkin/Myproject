@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TaskObj } from '../tasks'; 
 
 @Component({
   selector: 'app-task',
-  imports: [],
-  templateUrl: './task.html',
-  styleUrl: './task.css'
+  standalone: true,
+  template: `<p>{{ task.title }}</p>`,
+  styleUrls: ['./task.css']
 })
 export class Task {
-
+  @Input() task!: TaskObj;
 }

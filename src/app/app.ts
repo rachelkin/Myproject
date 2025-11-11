@@ -16,21 +16,14 @@ import { Tasks } from './tasks/tasks';
 export class App {
   protected readonly title = signal('firstApp');
   users = USERS;
-  
-  selectedUser?:any ;
+  selectedUser?: any;
 
+  onUserSelected(userId: string) {
+    const userClicked = this.users.find(u => u.id === userId);
+    if (userClicked) this.selectedUser = userClicked;
+  }
 
-  onUserSelected(userId:string){
-    const userClicked = this.users.find((user)=>user.id === userId)
-    console.log('user Clicked from father', userClicked);
-    if(userClicked)
-    this.selectedUser = userClicked;
-
+  trackByUserId(index: number, user: any) {
+    return user.id;
   }
 }
-
-
-
-
-
-

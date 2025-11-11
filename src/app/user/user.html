@@ -1,5 +1,6 @@
 <div>
-  <button [class.active]="isSelected" (click)="onUserClicked()" >
-    <img [src]="userObj.avatar" [alt]="userObj.name">
-    <p>{{ userObj.name }}</p>  </button>
+    <button [class.active] = "isSelected" (click) = "onUserClicked()">
+        <img [src]="userImgPath">
+        <p>{{userObj.name}}</p>
+    </button>
 </div>
