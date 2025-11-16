@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { fakeTasks } from '../tasks/fake_tasks';
 import { UserObj } from '../user/user.model';
 import { Task } from '../tasks/task/task';  
+import { NewTask } from './new-task/new-task';
 export type TaskObj = {
   id: string;
   userId: string;
@@ -10,13 +11,15 @@ export type TaskObj = {
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [Task],
+  imports: [Task,NewTask],
   templateUrl: './tasks.html',
   styleUrls: ['./tasks.css']
 })
 export class Tasks {
   @Input() user!: UserObj; 
- fakeTasks: TaskObj[] = fakeTasks;   
+ fakeTasks: TaskObj[] = fakeTasks; 
+   AskShowing=false;
+  
 
   get userSelectedTasks(): TaskObj[] {
     if (!this.user) return [];
@@ -26,4 +29,9 @@ export class Tasks {
   trackById(index: number, task: TaskObj) {
     return task.id;
   }
+  showNew(){
+    this.AskShowing=true;
+  }
+  
+  
 }

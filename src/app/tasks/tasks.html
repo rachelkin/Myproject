@@ -1,16 +1,19 @@
 <section id="tasks">
-    <header>
-        <h2>רשימת המטלות של {{user.name}}</h2>
-        <menu>
-            <button>Add Task</button>
-        </menu>
-    </header>
+<header>
+  <h2>רשימת המטלות של {{user.name}}</h2>
+  <menu>
+      <button (click)="AskShowing = true">Add Task</button>
+  </menu>
+</header>
     <ul>
         @for(task of userSelectedTasks; track task.id)
         {
             <li> 
  <app-task [task]="task"></app-task>         
    </li>
+        }
+        @if(AskShowing){
+            <app-new-task></app-new-task>
         }
         
     </ul>
