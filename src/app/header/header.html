@@ -2,4 +2,9 @@
     <img src="assets/logo.svg" alt="Logo icon"/> 
     <h1>Rachl's site</h1>
     <p>Welcome to Rachl's task managment site!</p>
-</header>
+    <button class="form" (click)="showForm = true">מילוי טופס</button>
+    @if (showForm) {
+        <form (closeForm)="showForm = false"></form>
+      }
+      </header>
+

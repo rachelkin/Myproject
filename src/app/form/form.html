@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+<input type="text" formControlName="firstName"/>
+<input type="text" formControlName="lastName"/>
+<input type="text" formControlName="adress"/>
+<input type="email" formControlName="email"/>
+<input type="password" formControlName="password1"/>
+<input type="password" formControlName="password2"/>
+<select formControlName="category">
+    <option value="">בחר קטגוריה</option>
+    <option value="personal">Personal</option>
+    <option value="work">Work</option>
+    <option value="urgent">Urgent</option>
+  </select>
+<button type="submit"> create</button>
+
+</form>

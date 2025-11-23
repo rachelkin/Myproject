@@ -37,4 +37,19 @@ main {
       font-size: 1.5rem;
       text-align: left;
     }
+    button.form {
+      background-color: #4CAF50; /* ירוק בסיסי */
+      color: white;              /* צבע טקסט לבן */
+      border: none;              /* אין מסגרת */
+      padding: 0.5rem 1rem;      /* רווח פנימי */
+      border-radius: 0.3rem;     /* פינות מעוגלות */
+      cursor: pointer;           /* שינוי סמן כאשר עובר מעל הכפתור */
+      font-size: 1rem;           /* גודל טקסט */
+      transition: background-color 0.3s ease; /* אנימציה חלקה לשינוי צבע */
+    }
+    
+    button.form:hover {
+      background-color: #45a049; /* שינוי צבע כאשר מרחפים מעל הכפתור */
+    }
+    
   }
