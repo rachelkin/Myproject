@@ -19,4 +19,8 @@ form=new FormGroup({
   category: new FormControl('', [Validators.required]) 
 
 });
+
+submit(){
+  
+}
 }
