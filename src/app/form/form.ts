@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms'
-import { FormGroup,FormControl ,Validators  } from '../../../node_modules/@angular/forms/index';
+import { FormGroup,FormControl ,Validators  } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './form.html',
   styleUrl: './form.css'
 })
@@ -21,6 +21,6 @@ form=new FormGroup({
 });
 
 submit(){
-  
+
 }
 }

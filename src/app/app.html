@@ -2,7 +2,9 @@
 <main>
 
   <ul id="users">
-    @for (user of users; track user.id){
+    <button class=" form" (click)="changeshowForm()"> contact us</button>
+    <button class=" addUser" (click)="changeshowAdduser()"> add user</button>
+@for (user of users; track user.id){
     <li>
       <app-user [userObj]="user" [isSelected]="user.id === selectedUser?.id"
         (userClicked)="onUserSelected($event)"></app-user>
@@ -15,6 +17,12 @@
    }
   @else{
     <p>Please log in to continue.</p>
+  }
+  @if(showForm){
+    <app-form></app-form>
+  }
+  @if(showAdduser){
+    <app-add-user (userCreated)="addUser($event)"></app-add-user>
   }
 </main>
 

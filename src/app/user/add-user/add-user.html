@@ -1,0 +1,47 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div formGroupName="name">
+    <input type="text" formControlName="firstName" placeholder="שם פרטי"/>
+@if(firstName && firstName.touched && firstName.invalid) {
+  <div class="error">שם פרטי לא תקין</div>
+}
+
+    <input type="text" formControlName="lastName" placeholder="שם משפחה"/>
+@if(lastName && lastName.touched && lastName.invalid) {
+  <div class="error">המשפחה שהזנת בפורמט לא תקין</div>
+}
+  </div>
+  <input type="text" formControlName="address" placeholder="כתובת"/>
+@if(address && address.touched && address.invalid) {
+  <div class="error">כתובת לא תקינה</div>
+}
+
+  <input type="email" formControlName="email" placeholder="אימייל"/>
+@if(email && email.touched && email.invalid) {
+  <div class="error">כתובת מייל לא תקינה</div>
+}
+  <div formGroupName="passwords">
+<input type="password" formControlName="passwoed1" placeholder="סיסמה"/>
+@if(passwoed1 && passwoed1.touched && passwoed1.invalid) {
+  <div class="error">יש להזין סיסמה בפורמט הנכון</div>
+}
+<input type="password" formControlName="passwoed2" placeholder="אימות סיסמה"/>
+ @if(passwoed2 &&passwoed2?.touched && passwoed2?.invalid){
+    <p class="error">יש להזין אימות סיסמה</p>
+  }
+  </div>
+<div formArrayName="categories">
+  @for(cat of Categories; track $index) {
+    <div class="category-row">
+      <label>
+        <input type="checkbox" [formControlName]="$index" />
+        {{ cat }} 
+      </label>
+    </div>
+  }
+</div>
+<button type="submit"  [disabled]="form.invalid">Create</button>
+</form>
+
+@if(form.hasError('mismatch') && form.touched){
+  <div class="error">הסיסמאות אינן תואמות</div>
+}
